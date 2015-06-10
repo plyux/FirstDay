@@ -8,7 +8,9 @@ import java.util.*;
  */
 public class DoThis {
 
-    public static <T, E> T getKeyByValue(Map<T, E> map, E value) {
+
+
+    private static <T, E> T getKeyByValue(Map<T, E> map, E value) {
         for (Map.Entry<T, E> entry : map.entrySet()) {
             if (Objects.equals(value, entry.getValue())) {
                 return entry.getKey();
@@ -19,13 +21,11 @@ public class DoThis {
 
     public static Character Find( String inputString ){
         Character required=' ';
-        char[] stringToCharArray = inputString.toCharArray();
-        Map<Character , Integer > checkSum = new HashMap<Character, Integer>();
+        Map<Character , Integer > checkSum = new LinkedHashMap<Character, Integer>();
         for(int i = 0; i < inputString.length(); i++){
-            char currentCharacter = stringToCharArray[i];
+            char currentCharacter = inputString.toLowerCase().charAt(i);
             if(checkSum.containsKey(currentCharacter)){
-                checkSum.put(currentCharacter ,checkSum.get(currentCharacter)+1);
-               // System.out.println("Key: \'" + currentCharacter + "\' Value: " + checkSum.get(currentCharacter));
+                checkSum.put(currentCharacter, checkSum.get(currentCharacter) + 1);
             }
             else{
                 checkSum.put(currentCharacter, 1);
