@@ -11,7 +11,7 @@ public class Main {
         String inputLine = " ";
         Scanner scanner = new Scanner(System.in);
         inputLine = scanner.nextLine();
-        char requiredChar = DoThis.Find(inputLine);
+        char requiredChar = DoThis.findRequiredCharacter(inputLine);
         System.out.println("Required symbol is: " + requiredChar);
     }
 }
